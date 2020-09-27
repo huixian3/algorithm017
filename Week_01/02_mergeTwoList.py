@@ -5,7 +5,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+def mergeTwoLists(self, l1, l2):
     # 两个链表循环遍历：逐个取两个链表中的最小的节点，赋值给新的节点
     res = ListNode()
     res.next = None
