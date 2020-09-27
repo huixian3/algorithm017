@@ -13,19 +13,18 @@ def twoSum(self, nums, target):
 
     if nums == None:
         return None
-    # 暴力枚举
-    for i in range(len(nums)-1):
-        for j in range(i+1, len(nums)):
-            if nums[i]+nums[j] == target:
-                return [i,j]
+    # # 暴力枚举 时间复杂度 n^2
+    # for i in range(len(nums)-1):
+    #     for j in range(i+1, len(nums)):
+    #         if nums[i]+nums[j] == target:
+    #             return [i,j]
 
 
-    # hash表
+    # hash表 时间复杂度 n
+    hash_set = {}
+    for i in range(len(nums)):
+        if hash_set.get(target - nums[i]) is not None:
 
-    # hash_set = {}
-    # for i in range(len(nums)):
-    #     if hash_set.get(target - nums[i]) is not None:
-    #
-    #         return [hash_set.get(target-nums[i]),i]
-    #     hash_set[nums[i]]=i
+            return [hash_set.get(target-nums[i]),i]
+        hash_set[nums[i]]=i
 
