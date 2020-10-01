@@ -19,12 +19,17 @@ def twoSum(self, nums, target):
     #         if nums[i]+nums[j] == target:
     #             return [i,j]
 
-
-    # hash表 时间复杂度 n
+    # hash表1 时间复杂度 n
     hash_set = {}
     for i in range(len(nums)):
         if hash_set.get(target - nums[i]) is not None:
-
             return [hash_set.get(target-nums[i]),i]
         hash_set[nums[i]]=i
 
+    # hash表2
+    # hash_set = {}
+    # for i in range(len(nums)):
+    #     hash_set[nums[i]] = i
+    # for i in range(len(nums)):
+    #     if hash_set.get(target - nums[i]) is not None and hash_set.get(target-nums[i]) != i:
+    #         return [hash_set.get(target-nums[i]),i]

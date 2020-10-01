@@ -9,7 +9,18 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums in-place instead.
         """
         # 利用数据反转，反转三次
-
+        def reverse(nums, i, j):
+            while i < j:
+                nums[j], nums[i] = nums[i], nums[j]
+                i = i+1
+                j = j-1
+        length = len(nums)
+        k = k % length
+        if length < 2 or k <=0:
+            return nums
+        reverse(nums, 0, length-1)
+        reverse(nums, 0, k-1)
+        reverse(nums, k, length-1)
         # 环形移动，直接将元素移动n个位置，首先移动n%k=0 之后n%k=1
 
 
