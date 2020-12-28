@@ -63,7 +63,7 @@ class RapidSort(object):
         :param a: int[]
         :return: int[]
         '''
-        self.rapid (a, 0, len(a)-1)
+        self.rapid(a, 0, len(a)-1)
         return a
 
 

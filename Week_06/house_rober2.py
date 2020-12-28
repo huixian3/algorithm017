@@ -6,14 +6,14 @@ class Solution:
         :rtype: int
         """
         n = len(nums)
-        if n<= 1:
+        if n <= 1:
             return nums[0] if nums else 0
         return max(self.rob2(n-1, nums[1:]), self.rob2(n-1, nums[:n-1]))
 
     def rob2(self, n, nums):
         if n<= 1:
             return nums[0] if nums else 0
-        memo=[0] * n
+        memo = [0] * n
         memo[0], memo[1] = nums[0], max(nums[0],nums[1])
         n = len(nums)
         for x in range(2, n):
