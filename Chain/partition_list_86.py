@@ -11,26 +11,21 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
-        # 逐段将小于x的node转移到头部
-        cur = head
-        prev = head
-        while cur:
-
-            if cur.val < x:
-                t_h = cur
-                t_t = cur
-                while cur and cur.val < x:
-                    t_t = cur
-                    prev = cur
-                    cur = cur.next
-                temp_head = head
-                head = t_h
-                prev.next = cur
-                t_t.next = temp_head
-            else:
-                prev = cur
-                cur = cur.next
-        return head
 
         # 分割成两个链表，之后进行合并
+        min_dummy = ListNode(0)
+        max_dummy = ListNode(0)
+        min_tail = min_dummy
+        max_tail = max_dummy
+        while head:
+            if head.val < x:
+                min_tail.next = head
+                min_tail = min_tail.next
+            else:
+                max_tail.next = head
+                max_tail = max_tail.next
+            head = head.next
+        min_tail.next = max_dummy.next
+        max_tail.next = None
+        return min_dummy.next
 
