@@ -41,6 +41,7 @@ class Maopao(object):
 
 class RapidSort(object):
 
+    # 前序遍历
     def rapid(self, a, begin, end):
         if begin >= end:
             return
@@ -87,7 +88,7 @@ class Insert(object):
 
         return a
 
-# # 归并排序
+# # 归并排序  -> 后序遍历
 class Merge(object):
     def sort(self, a):
         '''
