@@ -11,6 +11,7 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
+        # 前序
         def recur(root, left, right):
             if left > right: return
             node = TreeNode(postorder[root])

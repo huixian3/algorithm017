@@ -16,7 +16,7 @@ class Solution(object):
                 j = j-1
         length = len(nums)
         k = k % length
-        if length < 2 or k <=0:
+        if length < 2 or k <= 0:
             return nums
         reverse(nums, 0, length-1)
         reverse(nums, 0, k-1)

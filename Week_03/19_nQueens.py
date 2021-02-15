@@ -4,6 +4,7 @@ class Solution(object):
         :type n: int
         :rtype: List[List[str]]
         """
+        # TODO 回溯法可看做N叉树的遍历 DFS
         # 回溯法 逐层尝试，if ok goon or save，else godie
         def nqueens(row, col_list, xy_sum, xy_diff):
             # 终止条件

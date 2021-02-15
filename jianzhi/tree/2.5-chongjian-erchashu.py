@@ -5,6 +5,7 @@ class Solution(object):
         :type inorder: List[int]
         :rtype: TreeNode
         """
+        # 前序
         def recur(root, left, right):
             if left > right: return                               # 递归终止
             node = TreeNode(preorder[root])                       # 建立根节点
