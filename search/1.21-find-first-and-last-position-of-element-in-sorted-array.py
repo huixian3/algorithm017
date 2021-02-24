@@ -5,14 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # 构造边界查找函数，查询两次
 
-        # 一分查找，查找左右边界
+        # 二分查找，查找左右边界
         if not nums:
             return [-1, -1]
         left, right = 0, len(nums)-1
         while left <= right:
             mid = left + (right - left)//2
+
             if nums[mid] == target:
                 # 查左边界
                 l, r = mid-1, mid+1

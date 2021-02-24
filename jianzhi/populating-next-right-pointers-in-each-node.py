@@ -9,6 +9,7 @@ class Node(object):
 """
 from collections import deque
 class Solution(object):
+    # 二叉树层次链接
     def connect(self, root):
         """
         :type root: Node
@@ -21,7 +22,7 @@ class Solution(object):
             for i in range(n):
                 tmp = d.popleft()
                 if i < n-1:
-                    tmp.next = d[0] # 添加指针
+                    tmp.next = d[0] # 添加指针，直到当前层最后一个元素
                 if tmp.left:
                     d.append(tmp.left)
                 if tmp.right:

@@ -12,8 +12,7 @@ class Solution(object):
         :type B: TreeNode
         :rtype: bool
         """
-        # 递归判断B是否在以A为根节点的树中
-        def iscontain(A, B):
+        def iscontain(A, B): # B是否在以A为根节点的树中
             if not B:
                 return True
             if not A or A.val != B.val:

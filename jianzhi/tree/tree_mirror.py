@@ -13,9 +13,7 @@ class Solution(object):
         """
         if not root:
             return root
-        # root.left, root.right = self.mirrorTree(root.right), self.mirrorTree(root.left)
-        # return root
-
+        # 左右交换即为镜像树
         root.left, root.right = root.right, root.left
         self.mirrorTree(root.left)
         self.mirrorTree(root.right)

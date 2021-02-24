@@ -4,6 +4,8 @@ class Solution(object):
         :type numbers: List[int]
         :rtype: int
         """
+        # 旋转数组的最小数字
+        # 二分查找
         if not numbers:
             return -1
         l, r = 0, len(numbers)-1

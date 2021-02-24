@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution(object):
 
+    # Q：给你二叉搜索树的根节点 root ，该树中的两个节点被错误地交换。请在不改变其结构的情况下，恢复这棵树。
     # 问题的关键在于找到需要交换的两个node：first、second
     # 通过中序遍历，确认两个点，之后进行交换即可
 

@@ -14,7 +14,7 @@ class Solution:
     def longestConsecutive(self, root):
         # DFS
         self.max = 0
-        def dfs(node, last, length):
+        def dfs(node, last, length): # 遍历记录连续路径的长度
 
             if not node:
                 self.max = length if self.max < length else self.max
@@ -32,7 +32,7 @@ class Solution:
 
         # recursive
         self.longest = 0
-        def recur(root):
+        def recur(root): # 返回输入节点开始的最长连续路径
             if not root:
                 return 0
 

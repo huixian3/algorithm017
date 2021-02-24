@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: TreeNode
         """
         # 前序
-        def recur(root, left, right):
+        def recur(root, left, right): # 函数功能：构建当前节点
             if left > right: return                               # 递归终止
             node = TreeNode(preorder[root])                       # 建立根节点
             i = dic[preorder[root]]                               # 划分根节点、左子树、右子树

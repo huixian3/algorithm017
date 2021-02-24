@@ -5,6 +5,7 @@
 #         self.next = None
 
 class Solution(object):
+    # 链表倒数第 K 个节点，快慢指针
     def getKthFromEnd(self, head, k):
         """
         :type head: ListNode

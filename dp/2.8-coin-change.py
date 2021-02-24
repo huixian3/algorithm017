@@ -1,13 +1,13 @@
 import sys
 class Solution(object):
-
+# 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
     def coinChange(self, coins, amount):
         """
         :type coins: List[int]
         :type amount: int
         :rtype: int
         """
-        # 方法1：自底向上 使用 dp table
+        # 方法1：自底向上 使用 dp table; 完全背包问题
         dp = [float('inf')] * (amount+1)
         dp[0] = 0
         for coin in coins:

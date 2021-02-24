@@ -15,7 +15,7 @@ class Solution(object):
         # 1. 以自己为根的二叉树长什么样？ 树的序列化
         # 2. 以别的节点为跟的二叉树集合
         # 3. 判断是否有出现过，if not 存储；else 结果 + 1
-        def dfs(root):
+        def dfs(root): # 函数功能：找到当前节点的树结构，空节点补充"#"
             if not root: return "#"
             left = dfs(root.left)
             right = dfs(root.right)
@@ -25,6 +25,7 @@ class Solution(object):
             if path_list[cur_path] == 1: res.append(root)
             path_list[cur_path] = path_list[cur_path] + 1
             return cur_path
+
         dfs(root)
         return res
 

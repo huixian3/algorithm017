@@ -10,7 +10,7 @@ class Solution(object):
         g.sort()
         res = i = j = 0
 
-        while i< len(g) and j < len(s):
+        while i < len(g) and j < len(s):
             if g[i] <= s[j]:
                 res, i, j = res+1, i+1, j+1
             else:

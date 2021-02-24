@@ -1,4 +1,3 @@
-
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -7,64 +6,53 @@
 #         self.right = None
 
 class Codec:
-
     def serialize(self, root):
         """Encodes a tree to a single string.
-
+        
         :type root: TreeNode
         :rtype: str
         """
-
-
-    def deserialize(self, data):
-        """Decodes your encoded data to tree.
-
-        :type data: str
-        :rtype: TreeNode
-        """
-
-
-    # Your Codec object will be instantiated and called as such:
-    # codec = Codec()
-    # codec.deserialize(codec.serialize(root))
-
-
-
-
-
-
-
-
-
-class Codec:
-    def serialize(self, root):
         if not root: return "[]"
         queue = collections.deque()
         queue.append(root)
-        res = []
+        res=[]
         while queue:
             node = queue.popleft()
             if node:
                 res.append(str(node.val))
                 queue.append(node.left)
                 queue.append(node.right)
-            else: res.append("null")
+            else:
+                res.append('#')
         return '[' + ','.join(res) + ']'
 
     def deserialize(self, data):
-        if data == "[]": return
-        vals, i = data[1:-1].split(','), 1
-        root = TreeNode(int(vals[0]))
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        if data == '[]': return
+        nodes, i = data[1:-1].split(','), 1
+        n = len(nodes)
+        print(nodes)
+        if not nodes or n < 1: return None
+        root = TreeNode(int(nodes[0]))
         queue = collections.deque()
         queue.append(root)
+
         while queue:
             node = queue.popleft()
-            if vals[i] != "null":
-                node.left = TreeNode(int(vals[i]))
+            if nodes[i] != '#':
+                node.left = TreeNode(int(nodes[i]))
                 queue.append(node.left)
             i += 1
-            if vals[i] != "null":
-                node.right = TreeNode(int(vals[i]))
+            if nodes[i] != '#':
+                node.right = TreeNode(int(nodes[i]))
                 queue.append(node.right)
             i += 1
         return root
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.deserialize(codec.serialize(root))

@@ -23,7 +23,7 @@ class Solution(object):
 
 
         # 以下方法进行剪枝，效率较高
-        def recur(root):
+        def recur(root): # 返回当前节点开始的二叉树的深度，不平衡时，返回-1
             if not root: return 0
             left = recur(root.left)
             if left == -1: return -1

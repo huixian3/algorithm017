@@ -5,28 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
+    '''
+    给你二叉树的根结点 root ，请你将它展开为一个单链表：
+    要求：返回顺序和先序遍历相同
+    '''
     def flatten(self, root):
         """
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
         # TODO 前序遍历顺序不正确 先左节点，后右节点 配合 先进后出 notack
-        # if not root:
-        #     return
-        # stack = collections.deque([root])
-        # # cur level
-        # pre = None
-        # while stack:
-        #     node = stack.popleft()
-        #     if pre:
-        #         pre.right = node
-        #         pre.left = None
-        #     if node.left:
-        #         stack.append(node.left)
-        #     if node.right:
-        #         stack.append(node.right)
-        #     pre = node
-        # return
 
         # 先右节点，后左节点 配合 后进先出 ack
         if not root:
@@ -40,11 +28,10 @@ class Solution(object):
             if prev:
                 prev.left = None
                 prev.right = curr
-            left, right = curr.left, curr.right
-            if right:
-                stack.append(right)
-            if left:
-                stack.append(left)
+            if curr.right:
+                stack.append(curr.right)
+            if curr.left:
+                stack.append(curr.left)
             prev = curr
 
 

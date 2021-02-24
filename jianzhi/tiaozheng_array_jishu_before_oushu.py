@@ -1,25 +1,22 @@
 class Solution(object):
-    def exchange(self, array):
+    def exchange(self, nums):
         """
         :type nums: List[int]
         :rtype: List[int]
         """
-        # 双指针 快慢指针
-        if not array:
-            return array
-        n = len(array)
-        i, j = 0, 0
-        while j < n:
-            # 基数，需考虑将元素移到i所在位置，之后快慢指针都移动
-            if array[j] & 1 == 1:
-                temp = array[j]
-                k = j
-                while i < k:
-                    array[k] = array[k-1]
-                    k -= 1
-                array[i] = temp
-                i, j = i+1, j+1
-                # 偶数，则快指针后移一位
-            elif array[j] & 1 == 0:
-                j += 1
-        return array
+        '''
+        输入一个整数数组，实现一个函数来调整该数组中数字的顺序，
+        使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。
+        '''
+        # 双指针
+        if not nums: return nums
+        n = len(nums)
+        l, r = 0, 0
+        while r < n:
+            if nums[r] & 1 == 1:
+                if l != r:
+                    nums[l], nums[r] = nums[r], nums[l] # 不保序
+                l += 1
+            r += 1
+        return nums
+

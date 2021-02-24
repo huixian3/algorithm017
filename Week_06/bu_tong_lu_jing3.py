@@ -4,6 +4,7 @@ class Solution:
         # dfs
         self.res = 0
         m, n, empty = len(A), len(A[0]), 1
+
         for i in range(m):
             for j in range(n):
                 if A[i][j] == 1:
@@ -13,14 +14,17 @@ class Solution:
 
         def dfs(x, y, empty):
             if not (0 <= x < m and 0 <= y < n and A[x][y] >= 0): return
+            # end
             if A[x][y] == 2:
                 self.res += empty == 0
                 return
+            # 当前节点
             A[x][y] = -2
             dfs(x + 1, y, empty - 1)
             dfs(x - 1, y, empty - 1)
             dfs(x, y + 1, empty - 1)
             dfs(x, y - 1, empty - 1)
+            # reverse
             A[x][y] = 0
         dfs(x, y, empty)
         return self.res

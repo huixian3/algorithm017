@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: TreeNode
         """
         # 前序
-        def recur(root, left, right):
+        def recur(root, left, right):# 函数功能：构建当前节点
             if left > right: return
             node = TreeNode(postorder[root])
             index = in_dic[postorder[root]]

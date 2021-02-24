@@ -18,7 +18,7 @@ class Solution(object):
             level = collections.deque()
             for i in range(size):
                 node = queue.popleft()
-                # 和层次遍历唯一的区别：每层根据奇偶判断添加顺序。
+                # 和层次遍历唯一的区别：每层根据 层奇偶 判断添加顺序。
                 if not len(res)%2: level.append(node.val)
                 else: level.appendleft(node.val)
 

@@ -7,6 +7,7 @@ class Node(object):
         self.right = right
 """
 class Solution(object):
+    # 双向链表
     def treeToDoublyList(self, root):
         """
         :type root: Node
