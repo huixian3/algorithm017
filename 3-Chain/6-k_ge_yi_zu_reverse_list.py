@@ -1,5 +1,14 @@
 class Solution:
-    # 翻转一个子链表，并且返回新的头与尾
+    # # k个一组翻转链表，并且返回新的头与尾
+    '''
+
+    '''
+    '''
+    思路：
+    1. 判断分组
+    2. 组内翻转
+    3. 翻转后指针处理
+    '''
     def reverse(self, head, tail):
         cur = head
         prev = tail.next
@@ -9,15 +18,6 @@ class Solution:
             prev = cur
             cur = temp
         return tail, head
-
-        # prev = tail.next
-        # p = head
-        # while prev != tail:
-        #     nex = p.next
-        #     p.next = prev
-        #     prev = p
-        #     p = nex
-        # return tail, head
 
     def reverseKGroup(self, head, k: int):
 

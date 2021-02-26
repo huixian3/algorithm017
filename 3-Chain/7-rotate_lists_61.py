@@ -4,12 +4,19 @@
 #         self.val = val
 #         self.next = next
 class Solution(object):
+    # 旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
     def rotateRight(self, head, k):
         """
         :type head: ListNode
         :type k: int
         :rtype: ListNode
         """
+        '''
+        链表旋转，处理旋转节点前后指针变化即可
+        0. 处理旋转长度过大的情况，获取真实旋转次数
+        1. 找到旋转前尾结点 -》旋转后，链接到初始的头节点； 
+        2. 找到旋转点，也即是新的尾节点 和 头结点，尾结点.next=None
+        '''
         if not head or k < 1:
             return head
         fast, slow = head, head

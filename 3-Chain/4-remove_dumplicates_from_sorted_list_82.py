@@ -5,6 +5,14 @@
 #         self.next = None
 
 class Solution(object):
+    # 输入: 1->2->3->3->4->4->5
+    # 输出: 1->2->5
+    '''
+
+    '''
+    '''
+    思路：考虑 next 和 next.next 是否重复，重复的节点循环遍历去除
+    '''
     def deleteDuplicates(self, head):
         """
         :type head: ListNode

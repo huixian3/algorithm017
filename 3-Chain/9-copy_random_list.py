@@ -1,4 +1,11 @@
 class Solution:
+    '''
+    Q：给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。
+    要求返回这个链表的 深拷贝。
+    '''
+    '''
+    思路：
+    '''
     def copyRandomList(self, head):
         if not head:
             return None
@@ -15,7 +22,7 @@ class Solution:
         p = head
         while p:
             if p.random:
-                p.next.random = p.random.next
+                p.next.random = p.random.next # 新的random 也是新节点
             p = p.next.next
 
         dummy = Node(-1)

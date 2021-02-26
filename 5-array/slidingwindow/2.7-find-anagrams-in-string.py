@@ -5,6 +5,18 @@ class Solution(object):
         :type p: str
         :rtype: List[int]
         """
+        '''
+        滑动窗口思考以下四个问题：
+
+        1、当移动right扩大窗口，即加入字符时，应该更新哪些数据？
+        
+        2、什么条件下，窗口应该暂停扩大，开始移动left缩小窗口？
+        
+        3、当移动left缩小窗口，即移出字符时，应该更新哪些数据？
+        
+        4、我们要的结果应该在扩大窗口时还是缩小窗口时进行更新？
+
+        '''
         res = []
         if not s2 or not s1 or len(s2) < len(s1): return res
         left, right = 0, 0

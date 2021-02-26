@@ -3,7 +3,10 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
+'''
+反转从位置m到n的链表。请使用一趟扫描完成反转。
+说明:1 ≤ m ≤ n ≤ 链表长度。
+'''
 class Solution(object):
     def reverseBetween(self, head, m, n):
         """
