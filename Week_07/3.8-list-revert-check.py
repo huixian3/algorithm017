@@ -6,31 +6,48 @@ class ListNode:
 class solution:
     def revert(self, head, tail):
         cur = head
-        dummy = tail.next
-        while head != tail:
+        prev = tail.next
+        # 注意 prev == tail, 代表tail已经反转完成
+        while prev != tail:
             temp = head.next
-            head.next = dummy
-            dummy = head
+            head.next = prev
+            prev = head
             head = temp
-        # tail.next = head
         return tail, cur
+
+    # k个一组反转
+    def revert_k_m(self, head, k):
+        dummy = ListNode(0, head)
+        prev = dummy
+
+        while head:
+            tail = prev
+            for i in range(k):
+                tail = tail.next
+                if not tail: return dummy.next
+            head, tail = self.revert(head, tail)
+
+            # 处理翻转后衔接
+            prev.next = head
+            prev = tail
+            head = tail.next
+        return dummy.next
+
+
+    # 反转前k个节点
     def revert_k_node(self, head, k):
-        i = 0
+        i = 1
         tail = head
 
-        while i < k and head:
+        while i < k and head.next:
             head = head.next
             i += 1
-
-        concur = head
         new_head, new_tail = self.revert(tail, head) # revert
-        if concur: new_tail.next = head.next
-
         return new_head
 
-input = ListNode(0, ListNode(2, ListNode(4, None)))
+input = ListNode(0, ListNode(2, ListNode(3, ListNode(4, None))))
 
-res = solution().revert_k_node(input, 2)
+res = solution().revert_k_m(input, 2)
 while res:
     print(res.val)
     res = res.next
