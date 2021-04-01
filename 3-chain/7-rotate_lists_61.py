@@ -20,7 +20,7 @@ class Solution(object):
         if not head or k < 1:
             return head
         fast, slow = head, head
-        # 链表长度=n+1,同时fast移动到tail
+        # 链表长度=n+1,同时fast移动到之前tail
         n = 0
         while fast and fast.next:
             fast = fast.next
