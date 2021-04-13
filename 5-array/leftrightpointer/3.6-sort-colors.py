@@ -4,6 +4,30 @@ class Solution(object):
 
     此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。
     '''
+    def sort(self, nums):
+        i, left, right = 0, 0, len(nums)-1
+
+        while i <= right:
+            if nums[i] == 0:
+                nums[i], nums[left] = nums[left], nums[i]
+                i += 1
+                left += 1
+            elif nums[i] == 2:
+                nums[i], nums[right] = nums[right], nums[i]
+                right -= 1
+            else: i += 1
+        return
+
+
+
+
+
+
+
+
+
+
+
     def sortColors(self, nums):
         """
         :type nums: List[int]
